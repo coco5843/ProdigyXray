@@ -1,0 +1,9 @@
+name: ProdigyXray
+version: 1.2.1
+author: cocoraid
+main: fr.cocoraid.prodigyxray.ProdigyXray
+depends: [ProtocolLib]
+softdepend: [Vault]
+commands:
+    prodigyxray:
+        aliases: [px]
