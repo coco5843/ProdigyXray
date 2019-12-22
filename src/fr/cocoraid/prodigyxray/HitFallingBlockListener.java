@@ -38,7 +38,7 @@ public class HitFallingBlockListener {
                                 xray.getEntries().keySet().removeIf(fb -> {
                                     if((int)Reflection.getMethod(Reflection.getMinecraftClass("Entity"),"getId").invoke(fb) == i) {
                                         Location l = ((Entity)Reflection.getMethod(Reflection.getMinecraftClass("Entity"),"getBukkitEntity").invoke(fb)).getLocation();
-                                        p.sendBlockChange(l,l.getBlock().getType(),l.getBlock().getData());
+                                        p.sendBlockChange(l,l.getBlock().getBlockData());
                                         return true;
                                     } else
                                         return false;

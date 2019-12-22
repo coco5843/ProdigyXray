@@ -2,6 +2,7 @@ package fr.cocoraid.prodigyxray;
 
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -36,7 +37,7 @@ public class ProdigyXray extends JavaPlugin  implements Listener {
     private void setupTeam() {
         Xray.getMap().keySet().forEach(m -> {
             Team team = scoreboard.registerNewTeam(m.name());
-            team.setPrefix(Xray.getMap().get(m));
+            team.setColor(Xray.getMap().get(m));
             teams.add(team);
         });
     }
@@ -177,7 +178,7 @@ public class ProdigyXray extends JavaPlugin  implements Listener {
                         });
                         String list = "";
                         for (String ore : ores) {
-                            list = list + ", " + Xray.getMap().get(Material.valueOf(ore.toUpperCase() + "_ORE")).replace("§0","§7") + ore;
+                            list = list + ", " + Xray.getMap().get(Material.valueOf(ore.toUpperCase() + "_ORE")) + ore;
                         }
 
                         p.sendMessage(px.available.replace("&", "§") + list);
